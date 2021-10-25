@@ -1,11 +1,23 @@
 package com.example.songer;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class AlbumModel {
+     @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String title;
     private String artist;
     private int songCount;
     private int length;
     private String imageUrl;
+
+    public AlbumModel() {
+    }
 
     public AlbumModel(String title, String artist, int songCount, int length, String imageUrl) {
         this.title = title;
@@ -13,6 +25,14 @@ public class AlbumModel {
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -54,4 +74,5 @@ public class AlbumModel {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
 }
