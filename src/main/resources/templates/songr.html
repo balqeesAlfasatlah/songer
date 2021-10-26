@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body style="background-color : #f2f2f2;">
-<h1 style="text-align :center; background-color : #00b386; padding :30px; margin-top:0; margin-bottom:100px;font-size:50px; color:#fff;">Albums Page</h1>
+<body>
+<header style="display: flex; justify-content : space-around; background-color : #00b386; padding :10px;">
+
+    <h1 style="padding-left:50px; font-size:40px; color : #ffcccc;">Albums Page</h1>
+    <a style="margin:auto; text-decoration: none; color : #ffb3e6; border : 3px solid #ccc ;padding :10px; margin-left:60%;}
+ " href="http://localhost:8080/">Home</a>
+
+</header>
 <br/>
-<form action="#" th:action="@{/albums}" th:object="${albums}" method="post">
-    <br/>
-    <p> style="width:400px;" imageUrl : <input type="text" field="*{imageUrl}" name="imageUrl"></p>
-    <br/>
-    <p> style="color :#009973; font-weight:bold;">Title : <input type="text" field="*{title}" name="title"></span></p>
-    <br/>
-    <p> style="color :#009973; font-weight:bold;">Artist :<input type="text" field="*{artist}" name="artist"></p>
-    <br/>
-    <p> style="color :#009973; font-weight:bold;">SongCount : <input type="number" field="*{songCount}" name="songCount"></p>
-    <br/>
-    <p> style="color :#009973; font-weight:bold;">Length : <input type="number" field="*{length}" name="length"></p>
-    <br/>
-    <p>Submit <input type="submit" value="Submit"/></p>
+<form  style="border-radius: 5px; background-color : #f2f2f2; padding: 15px; margin :left; height:55%; width:43%;" action="#" th:action="@{/albums}" th:object="${albums}" method="post">
+    <h2 style=" color :#009973; font-weight:bold; padding-bottom :10px; text-align :center">Add New Album </h2>
+    <p style=" color :#009973; font-weight:bold; padding-bottom :10px;">imageUrl : <input style="width:400px" type="text" field="*{imageUrl}" name="imageUrl"></p>
+    <p style="color :#009973; font-weight:bold;">Title : <input style="width:400px" type="text" field="*{title}" name="title"></span></p>
+    <p style="color :#009973; font-weight:bold;">Artist : <input style="width:400px" type="text" field="*{artist}" name="artist"></p>
+    <p style="color :#009973; font-weight:bold;">SongCount : <input style="width:400px" type="number" field="*{songCount}" name="songCount"></p>
+    <p style="color :#009973; font-weight:bold;">Length : <input style="width:400px" type="number" field="*{length}" name="length"></p>
+    <p> <input style="width:600px; height:50px; background-color : #ffcccc; text-align:center"  type="submit" value="Submit"/></p>
 
 </form>
 
