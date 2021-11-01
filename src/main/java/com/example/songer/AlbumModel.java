@@ -14,8 +14,8 @@ public class AlbumModel {
     private int length;
     private String imageUrl;
 
-    @OneToMany(mappedBy = "album")
-    private List<SongModel> songModelList;
+      @OneToMany(mappedBy = "albumModel")
+      private List<SongModel> songModelList;
 
     public List<SongModel> getSongModelList() {
         return songModelList;

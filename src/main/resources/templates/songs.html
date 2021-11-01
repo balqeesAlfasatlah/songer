@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<header style="display: flex; justify-content : space-around; background-color : #00b386; padding :10px;">
+
+  <h1 style="padding-left:50px; font-size:40px; color : #ffcccc;">Songr Application</h1>
+  <a style="margin:auto; text-decoration: none; color : #ffb3e6; border : 3px solid #ccc ;padding :10px;margin-left:62%;}
+ " href="http://localhost:8080/">Home</a>
+  <a style="margin:auto; text-decoration: none; color : #ffb3e6; border : 3px solid #ccc ;padding :10px;}
+ " href="http://localhost:8080/albums">Albums</a>
+
+
+
+</header>
+
+<main>
+
+  <div style="float :left; padding :38px; margin:20px; background-color : #fff; border:1px solid #ccc"  th:each="song : ${songs}">
+
+    <img src="https://i.pinimg.com/originals/51/fe/4e/51fe4ecad3050ee13db6d167c06be971.png" alt="" />
+    <p style="color :#009973; font-weight:bold;">Song title : <span th:text="${song.title}"></span></p>
+    <p style="color :#009973; font-weight:bold;">Song length : <span th:text="${song.length}"></span></p>
+    <p style="color :#009973; font-weight:bold;">Track number : <span th:text="${song.trackNumber}"></span></p>
+    <p style="color :#009973; font-weight:bold;">Album name : <span th:text="${song.title}"></span></p>
+
+
+  </div>
+
+
+</main>
+
+</body>
+</html>

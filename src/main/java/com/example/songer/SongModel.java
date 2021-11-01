@@ -11,21 +11,22 @@ public class SongModel {
     private String title;
     private int length;
     private int trackNumber;
-    private List <SongModel> songModelList;
-     @ManyToOne
-     @JoinColumn(name = "id" , nullable = false)
 
-    private AlbumModel album;
+    @ManyToOne
+    //@JoinColumn(name="albummodel_id")
+    private AlbumModel albumModel;
 
     public SongModel() {
     }
 
-    public SongModel(String title, int length, int trackNumber, AlbumModel album) {
+    public SongModel(String title, int length, int trackNumber,AlbumModel albumModel) {
+        this();
         this.title = title;
         this.length = length;
         this.trackNumber = trackNumber;
-        this.album = album;
+        this.albumModel = albumModel;
     }
+
 
     public int getId() {
         return id;
@@ -59,12 +60,12 @@ public class SongModel {
         this.trackNumber = trackNumber;
     }
 
-    public AlbumModel getAlbum() {
-        return album;
+    public AlbumModel getAlbumModel() {
+        return albumModel;
     }
 
-    public void setAlbum(AlbumModel album) {
-        this.album = album;
+    public void setAlbumModel(AlbumModel albumModel) {
+        this.albumModel = albumModel;
     }
 
     @Override
@@ -74,7 +75,6 @@ public class SongModel {
                 ", title='" + title + '\'' +
                 ", length=" + length +
                 ", trackNumber=" + trackNumber +
-                ", album=" + album +
                 '}';
     }
 }

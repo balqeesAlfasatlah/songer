@@ -7,9 +7,12 @@
 <body>
 <header style="display: flex; justify-content : space-around; background-color : #00b386; padding :10px;">
 
-    <h1 style="padding-left:50px; font-size:40px; color : #ffcccc;">Albums Page</h1>
-    <a style="margin:auto; text-decoration: none; color : #ffb3e6; border : 3px solid #ccc ;padding :10px; margin-left:60%;}
+    <h1 style="padding-left:50px; font-size:40px; color : #ffcccc;">Songr Application</h1>
+    <a style="margin:auto; text-decoration: none; color : #ffb3e6; border : 3px solid #ccc ;padding :10px;margin-left:62%;}
  " href="http://localhost:8080/">Home</a>
+    <a style="margin:auto; text-decoration: none; color : #ffb3e6; border : 3px solid #ccc ;padding :10px;}
+ " href="http://localhost:8080/songs">songs</a>
+
 
 </header>
 <br/>
@@ -25,12 +28,14 @@
 </form>
 
 
-  <div style="float :left; padding :38px; margin:10px; background-color : #fff; border:1px solid #ccc" th:each="songs : ${albums}">
-    <img style="width:400px;" th:src="${songs.imageUrl}"></img>
-    <p style="color :#009973; font-weight:bold;">Title : <span th:text="${songs.title}"></span></p>
-    <p style="color :#009973; font-weight:bold;">Artist : <span th:text="${songs.artist}"></span></p>
-    <p style="color :#009973; font-weight:bold;">SongCount : <span th:text="${songs.songCount}"></span></p>
-    <p style="color :#009973; font-weight:bold;">Length : <span th:text="${songs.length}"></span></p>
+  <div style="float :left; padding :38px; margin:10px; background-color : #fff; border:1px solid #ccc" th:each="album : ${albums}">
+
+    <img style="width:400px;" th:src="${album.imageUrl}"></img>
+    <p style="color :#009973; font-weight:bold;">Title : <span th:text="${album.title}"></span></p>
+    <p style="color :#009973; font-weight:bold;">Artist : <span th:text="${album.artist}"></span></p>
+    <p style="color :#009973; font-weight:bold;">SongCount : <span th:text="${album.songCount}"></span></p>
+    <p style="color :#009973; font-weight:bold;">Length : <span th:text="${album.length}"></span></p>
+      <a th:href="@{http://localhost:8080/oneAlbum(id=${album.id})}">show album</a>
   </div>
 </body>
 </html>
