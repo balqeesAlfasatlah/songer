@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<header style="display: flex; justify-content : space-around; background-color : #00b386; padding :10px;">
+
+    <h1 style="padding-left:50px; font-size:40px; color : #ffcccc;">Songr Application</h1>
+    <a style="margin:auto; text-decoration: none; color : #ffb3e6; border : 3px solid #ccc ;padding :10px;}
+ " href="http://localhost:8080/">Home</a>
+    <a style="margin:auto; text-decoration: none; color : #ffb3e6; border : 3px solid #ccc ;padding :10px; margin-left:55%;}
+ " href="http://localhost:8080/albums">Albums</a>
+    <a style="margin:auto; text-decoration: none; color : #ffb3e6; border : 3px solid #ccc ;padding :10px;}
+ " href="http://localhost:8080/songs">songs</a>
+
+
+</header>
+
+
+<main>
+
+    <form  style="border-radius: 5px; background-color : #f2f2f2; padding: 10px; margin :left; margin-top :15px; height:55%; width:43%;" action="#" th:action="@{/addSong}"  th:object="${song}" method="post">
+        <h2 style=" color :#009973; font-weight:bold; padding-bottom :10px; text-align :center">Add New Song </h2>
+        <input type="hidden" field="*{id}" name="id" th:value="${album.id}" />
+        <br />
+
+
+        <p style="color :#009973; font-weight:bold;">Song title: <input style="width:400px" type="text" field="*{title}" name="title"></span></p>
+        <p style="color :#009973; font-weight:bold;">Song length : <input style="width:400px" type="text" field="*{length}" name="length"></p>
+        <p style="color :#009973; font-weight:bold;">Track number : <input style="width:400px" type="number" field="*{trackNumber}" name="trackNumber"></p>
+        <p> <input style="width:600px; height:50px; background-color : #ffcccc; text-align:center"  type="submit" value="Submit"/></p>
+
+    </form>
+
+
+    <div style="float :left; padding :38px; margin:10px; background-color : #fff; border:1px solid #ccc">
+        <h2>album details</h2>
+        <img style="width:400px;" th:src="${album.imageUrl}"></img>
+        <p style="color :#009973; font-weight:bold;">Album title : <span th:text="${album.title}"></span></p>
+        <p style="color :#009973; font-weight:bold;">Artist Name : <span th:text="${album.artist}"></span></p>
+        <p style="color :#009973; font-weight:bold;">Number of songs : <span th:text="${album.songCount}"></span></p>
+        <p style="color :#009973; font-weight:bold;">Total length : <span th:text="${album.length}"></span></p>
+
+    </div>
+
+
+
+    <h2 style=" width :50%;float :right;">album songs</h2>
+    <br/><br/>
+    <div style=" border : 2px solid black; float :left; padding :38px; margin:10px; background-color : #fff; border:1px solid #ccc" th:each="song : ${album.songModelList}">
+        <p style="color :#009973; font-weight:bold;">Song title : <span th:text="${song.title}"></span></p>
+        <p style="color :#009973; font-weight:bold;">Song length : <span th:text="${song.length}"></span></p>
+        <p style="color :#009973; font-weight:bold;">Track number : <span th:text="${song.trackNumber}"></span></p>
+
+    </div>
+
+
+</main>
+
+</body>
+</html>
